@@ -1,21 +1,21 @@
 window.onload = () => {
-  const ironhackBCN = {
-    lat: 41.386230, 
-    lng: 2.174980
-  };
-  
-  const markers = []
+  // const ironhackBCN = {
+  //   lat: 41.386230, 
+  //   lng: 2.174980
+  // };
+  const ironhackBCN = { lat: 19.4054138,  lng: -99.1737727 };  
+
+  const markers = [];
   
   const map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
     center: ironhackBCN
   });
 
-  const center = {
+  var center = {
     lat: undefined,
     lng: undefined
-  };  
-  
+  };    
   
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -47,7 +47,7 @@ window.onload = () => {
       next(error)
     })
   }
-
+  
   function placeRestaurants(restaurants){
     restaurants.forEach(function(restaurant){
       const center = {
@@ -59,9 +59,8 @@ window.onload = () => {
         map: map,
         title: restaurant.name
       });
-      markers.push(pin)
-    });
+      markers.push(pin);
+    });    
   }
-
 };
 
