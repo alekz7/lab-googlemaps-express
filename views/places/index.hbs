@@ -8,11 +8,16 @@
     <div class="container">
     </div>
       <div class="info">
-        <h3>List all restaurants</h3>
-        <a href="/new">Create new restaurant</a>
+        <h3>List all places</h3>
+        <a href="/new">Create new place</a>
         <ul>
-          {{#each restaurants}}
+          {{#each places}}
             <li>
+              {{#if this.bookCoffee}}
+              books
+              {{else}}
+              coffee
+              {{/if}}
               <a href="/{{ this._id}}"> {{ this.name}}<span>{{ this.description }}</span> </a> |
               <a href="/{{ this._id}}/edit">Edit</a> |
               <a href="/{{ this._id}}/delete">Delete</a>
@@ -22,9 +27,9 @@
       </div>
       <div id="map"></div>
   </body>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo">
-  </script>
-  <script type="text/javascript" src="/javascripts/main.js"></script>
-</html>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo">
+    </script>
+    <script type="text/javascript" src="/javascripts/placeMain.js"></script>
+  </html>

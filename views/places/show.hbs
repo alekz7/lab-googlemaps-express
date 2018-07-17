@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Best Places on Earth</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h3 id="placeName" data-id="{{ place.id}}">{{ place.name}}</h3>
+    <p>{{ place.description}}</p>
+    <a href="/">List</a>
+    <div id="map"></div>
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo">  </script>
+  <script type="text/javascript" src="/javascripts/placeShow.js"></script>
+</html>
